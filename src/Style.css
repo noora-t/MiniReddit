@@ -1,0 +1,17 @@
+.flex-container {
+    display: flex;
+    flex-flow: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.flex-item {
+    height: auto;
+    width: 25rem;
+    background-color: beige;
+    padding: 1rem;
+}
+
+h1 {
+    text-align: center;
+}
