@@ -38,13 +38,12 @@ export const PostList = (props) => {
             columnClassName="my-masonry-grid_column">
             {props.posts.map(post => {
                 return (
-                    <div key={post.data.id} className="post">
-                        <Link to={`/post/10aeuic`} key={post.data.id}><h2>{post.data.title}</h2></Link>
-                        <img src={(typeof(post.data.preview) !== 'undefined') ? post.data.preview.images[0].source.url : null} alt=""/>
-                        <div className="flex-container info">
-                            <p>Posted by <span className="author">{post.data.author}</span></p>
-                            <p>{convertTime(post.data.created)}</p>
-                            <p className="comments"><span className="material-symbols-outlined icon">chat_bubble</span>{post.data.num_comments}</p>
+                    <div key={post.data.id} className="listing-post">
+                        <Link to={`/post/${post.data.id}`} key={post.data.id}><h2>{post.data.title}</h2></Link>
+                        <img className="post-img" src={(typeof(post.data.preview) !== 'undefined') ? post.data.preview.images[0].source.url : null} alt=""/>
+                        <div className="info">
+                            <p>Posted by <span className="author">{post.data.author} </span>{convertTime(post.data.created)}</p>
+                            <p><span className="material-symbols-outlined chat-icon">chat_bubble</span>{post.data.num_comments}</p>
                         </div>
                     </div>
                 );

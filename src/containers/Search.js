@@ -26,7 +26,7 @@ export const Search = () => {
     <form onSubmit={handleSubmit} className="search-form">
       <input placeholder="Search MiniReddit" required type="text" value={searchParam} onChange={handleChange} className="search" />
       <button type="submit" className="search-button">
-        <span class="material-symbols-outlined">
+        <span className="material-symbols-outlined">
           search
         </span>
       </button>

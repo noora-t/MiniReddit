@@ -55,15 +55,15 @@ export const Post = () => {
 
     return (
         loading ? <CircularProgress color="primary" size="5rem"/> : 
-        <div key={id} className="single">
-            <div className="flex-container info">
-                <p>Posted by <span className="author">{post.data.children[0].data.author}</span></p>
-                <p>{convertTime(post.data.children[0].data.created)}</p>
+        <div key={id} className="single-post">
+            <div className="info">
+                <p id="subreddit-name">{post.data.children[0].data.subreddit_name_prefixed}</p>
+                <p>Posted by <span className="author">{post.data.children[0].data.author} </span>
+                {convertTime(post.data.children[0].data.created)}</p>
             </div>
-            <p><span className="material-symbols-outlined icon">chat_bubble</span>{post.data.children[0].data.num_comments}</p>
             <h2>{post.data.children[0].data.title}</h2>
-            <img src={(typeof(post.data.children[0].data.preview) !== 'undefined') ? post.data.children[0].data.preview.images[0].source.url : null} alt=""/>
-            
+            <img className="post-img" src={(typeof(post.data.children[0].data.preview) !== 'undefined') ? post.data.children[0].data.preview.images[0].source.url : null} alt=""/>
+            <p><span className="material-symbols-outlined chat-icon">chat_bubble</span>{post.data.children[0].data.num_comments}</p>
         </div>
     );
 }

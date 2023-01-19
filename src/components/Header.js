@@ -1,8 +1,12 @@
 import React from 'react';
-import { Search } from '../containers/Search';
+import { Link } from 'react-router-dom';
+import logo from '../images/icons_reddit.svg';
 
 export const Header = () => {
     return (
-        <h1>Mini<span className="emphasis-color">Reddit</span></h1>
+        <Link to="/"><h1><img class="logo" src={logo}/>Mini<span className="blue">Reddit</span></h1></Link>
     );
 }
+
+
+

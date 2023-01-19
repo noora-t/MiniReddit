@@ -1,22 +1,26 @@
 /* || GENERAL */
 
 :root {
-    --main-bg-color: #024558;
-    --secondary-bg-color: #714100;
+    --main-bg-color:  rgb(226, 226, 226);
     --main-color: #292929;
     --secondary-color: #969696;
-    --orange: #D77B00;
     --blue: #007EA0;
+    --dark-blue: #024558;
+    --orange: #D77B00;
+    --dark-orange: #714100;
     --light-grey: #FBFBFB;
+    --box-shadow: rgb(199, 199, 199);
 }
 
 body {
-    background-color: rgb(226, 226, 226);
+    background-color: var(--main-bg-color);
     color: var(--main-color);
 }
 
 h1 {
     color: var(--main-color);
+    margin-right: 3rem;
+    margin-top: 0.5rem;
 }
 
 a {
@@ -28,7 +32,7 @@ a:hover {
     color: var(--orange);
 }
 
-.emphasis-color {
+.blue {
     color: var(--blue);
 }
 
@@ -37,16 +41,20 @@ a:hover {
 header {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    flex-wrap: wrap;
+    align-items: center;
     margin-bottom: 2rem;
     padding: 0 2rem;
-    box-shadow: 0px 4px 5px  rgb(199, 199, 199);
+    box-shadow: 0px 4px 5px  var(--box-shadow);
     background-color: white;
 }
 
-.search-form {
-    margin-left: 5rem;
+.logo {
+    position: relative;
+    top: 0.7rem;
 }
+
+/* || SEARCH */
 
 .search {
     height: 2rem;
@@ -61,11 +69,33 @@ header {
     left: -2.23rem;
     top: 0.3rem;
     border: none;
+    padding: 0;
 }
 
 .search-button:hover {
     color: var(--orange);
     cursor: pointer;
+}
+
+@media only screen and (max-width: 709px) {
+    .search-form {
+        margin-bottom: 1rem;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .search {
+        width: 15rem;
+    }
+}
+
+.MuiCircularProgress-root {
+    position: relative;
+    left: 40%;
+}
+
+.MuiCircularProgress-colorPrimary {
+    color: white!important;
 }
 
 /* || MAISONRY */
@@ -84,81 +114,80 @@ header {
     background-clip: padding-box;
 }
 
-/* Style your items */
 .my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
     background: white;
-    box-shadow: 7px 7px 7px rgb(199, 199, 199);
+    box-shadow: 7px 7px 7px var(--box-shadow);
     margin-bottom: 30px;
     padding: 0.2rem 1.5rem 1rem 1.5rem;
     border-radius: 1%;
 }
 
-/* || POST */
-
-.MuiCircularProgress-root {
-    position: relative;
-    left: 40%;
-}
-
-.MuiCircularProgress-colorPrimary {
-    color: white!important;
-}
+/* || POST LISTING */
 
 .info {
     align-items: baseline;
-}
-
-.flex-container {
     display: flex;
     gap: 1rem;
-}
-
-.post p {
     color: var(--secondary-color);
     font-size: 0.9rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0 1rem;
 }
 
-.post img {
+.post-img {
     width: 100%;
     display: block;
-    margin: 0;
-    border-radius: 2%;
+    margin: 0 auto;
+    border-radius: 1%;
 }
 
-.icon {
+.chat-icon {
     position: relative;
     top: 5px;
     margin-right: 0.4rem;
-    color: var(--secondary-color);
 }
 
 .author {
     color: var(--orange);
 }
 
-.comments {
-    margin-left: auto;
-}
+/* || SINGLE POST PAGE */
 
-.info p:last-child {
-    margin-left: auto;
-  }
-
-.single {
-    width: 80%;
+.single-post {
+    width: 45%;
+    min-width: 300px;
     background-color: var(--light-grey);
     padding: 0.2rem 1.5rem 1rem 1.5rem;
-    margin: 0 auto;
+    margin: 0 auto 4rem auto;
+    box-shadow: 7px 7px 7px var(--box-shadow);
+    border-radius: 1%;
 }
 
-.single p {
-    color: var(--secondary-color);
-    font-size: 0.9rem;
+#subreddit-name {
+    font-weight: bold;
+    color: var(--main-color);
+    font-size: 1rem;
 }
 
-.single img {
-    width: 35%;
-    display: block;
-    margin: 0 auto;
-    border-radius: 2%;
+@media only screen and (max-width: 1500px) {
+    .single-post {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .single-post {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 695px) {
+    .single-post p {
+        margin: 0;
+    }
+
+    .single-post {
+        padding-top: 1rem;
+    }
 }
