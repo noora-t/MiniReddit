@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import CircularProgress from '@mui/material/CircularProgress';
 import {PostList} from '../components/PostList';
 import '../Style.css';
