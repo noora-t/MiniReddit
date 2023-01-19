@@ -20,7 +20,7 @@ export const Post = () => {
     const getPosts = async () => {
         setLoading(true);
          try {
-            const response = await fetch(`http://www.reddit.com/api/info.json?id=t3_${id}&raw_json=1`);
+            const response = await fetch(`https://www.reddit.com/api/info.json?id=t3_${id}&raw_json=1`);
 
             if(response.ok) {
                 const jsonResponse = await response.json();

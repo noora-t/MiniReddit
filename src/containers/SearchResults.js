@@ -25,7 +25,7 @@ export const SearchResults = () => {
         setLoading(true);
          try {
             const title = queryParams.get('name');
-            const response = await fetch(`http://www.reddit.com/search.json?q=${title}&raw_json=1&sort=relevance&limit=50`);
+            const response = await fetch(`https://www.reddit.com/search.json?q=${title}&raw_json=1&sort=relevance&limit=50`);
 
             if(response.ok) {
                 const jsonResponse = await response.json();
