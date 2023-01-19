@@ -15,7 +15,7 @@ export const HomePage = () => {
     }, []);
 
     const getPosts = async () => {try {
-        const response = await fetch(`http://www.reddit.com/r/all/top/.json?limit=50&raw_json=1`);
+        const response = await fetch(`https://www.reddit.com/r/all/top/.json?limit=50&raw_json=1`);
 
             if(response.ok) {
                 const jsonResponse = await response.json();

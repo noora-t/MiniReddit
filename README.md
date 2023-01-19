@@ -6,6 +6,8 @@ I created MiniReddit to practise making a single-page application with React. Th
 
 The idea for the app came from CodeCademy's front-end developer course. All the code and visual style is designed and written by me.
 
+See the app: https://noora-mini-reddit-app.netlify.app/
+
 ## App Features
 
 * Landing page with top posts
